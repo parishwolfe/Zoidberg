@@ -10,7 +10,7 @@ services:
       - ./data:/app/data
       - ./logs:/app/logs
       - ./state:/home/node/.openclaw
-      - ./config:/app/config:ro
+      - ./config:/app/config
     environment:
       OPENCLAW_CONFIG_PATH: /app/config/openclaw.config
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}

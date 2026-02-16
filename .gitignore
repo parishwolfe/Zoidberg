@@ -1,6 +1,9 @@
 # Zoidberg runtime directories
 data/
 state/*
+
+# OpenClaw rewrites this file and may resolve env vars to plaintext
+config/openclaw.config
 !state/workspace/
 state/workspace/*
 !state/workspace/USER.md
