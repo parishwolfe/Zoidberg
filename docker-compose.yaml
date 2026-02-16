@@ -1,5 +1,3 @@
-
-
 version: "3.9"
 
 services:
@@ -15,7 +13,7 @@ services:
       - openclaw_logs:/app/logs
       - ./config:/app/config:ro
     environment:
-      OPENCLAW_CONFIG: /app/config/openclaw.json
+      OPENCLAW_CONFIG: /app/config/openclaw.config
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}
       GMAIL_IMAP_USER: ${GMAIL_IMAP_USER}
       GMAIL_IMAP_PASS: ${GMAIL_IMAP_PASS}

@@ -1,5 +1,3 @@
-
-
 FROM node:20-alpine
 
 # Create app directory
