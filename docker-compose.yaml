@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   openclaw:
-    image: openclaw/openclaw:latest
+    image: ghcr.io/openclaw/openclaw:latest
     container_name: openclaw
     env_file:
       - .env
@@ -13,7 +11,7 @@ services:
       - openclaw_logs:/app/logs
       - ./config:/app/config:ro
     environment:
-      OPENCLAW_CONFIG: /app/config/openclaw.config
+      OPENCLAW_CONFIG_PATH: /app/config/openclaw.config
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}
       GMAIL_IMAP_USER: ${GMAIL_IMAP_USER}
       GMAIL_IMAP_PASS: ${GMAIL_IMAP_PASS}
