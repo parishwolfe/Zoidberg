@@ -1,3 +1,10 @@
+# Zoidberg runtime directories
+data/
+state/*
+!state/workspace/
+state/workspace/*
+!state/workspace/USER.md
+
 # Logs
 logs
 *.log

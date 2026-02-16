@@ -7,8 +7,9 @@ services:
     ports:
       - "127.0.0.1:18789:18789"
     volumes:
-      - openclaw_data:/app/data
-      - openclaw_logs:/app/logs
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./state:/home/node/.openclaw
       - ./config:/app/config:ro
     environment:
       OPENCLAW_CONFIG_PATH: /app/config/openclaw.config
@@ -21,7 +22,3 @@ services:
       BLUEBUBBLES_URL: ${BLUEBUBBLES_URL}
       BLUEBUBBLES_API_KEY: ${BLUEBUBBLES_API_KEY}
     restart: unless-stopped
-
-volumes:
-  openclaw_data:
-  openclaw_logs:
