@@ -1,0 +1,31 @@
+
+
+version: "3.9"
+
+services:
+  openclaw:
+    image: openclaw/openclaw:latest
+    container_name: openclaw
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:18789:18789"
+    volumes:
+      - openclaw_data:/app/data
+      - openclaw_logs:/app/logs
+      - ./config:/app/config:ro
+    environment:
+      OPENCLAW_CONFIG: /app/config/openclaw.json
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}
+      GMAIL_IMAP_USER: ${GMAIL_IMAP_USER}
+      GMAIL_IMAP_PASS: ${GMAIL_IMAP_PASS}
+      GOOGLE_CALENDAR_CLIENT_ID: ${GOOGLE_CALENDAR_CLIENT_ID}
+      GOOGLE_CALENDAR_CLIENT_SECRET: ${GOOGLE_CALENDAR_CLIENT_SECRET}
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+      BLUEBUBBLES_URL: ${BLUEBUBBLES_URL}
+      BLUEBUBBLES_API_KEY: ${BLUEBUBBLES_API_KEY}
+    restart: unless-stopped
+
+volumes:
+  openclaw_data:
+  openclaw_logs:
